@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title></title>
+
+		<style type="text/css">
+		</style>
+
+	</head>
+	<body>
+		<div>
+			<p id="lang_the_text_is_in_english"></p>
+			<p id="lang_second_line"></p>
+		</div>
+		<script type="text/javascript">
+		    var bdLang = {
+				"EN":[
+				  	{
+				  	"lang_the_text_is_in_english":"TEXT IN ENGLISH",
+				  	"lang_second_line":"SECOND LINE"
+					}
+				],
+				"ES":[
+				  {
+				  	"lang_the_text_is_in_english":"TEXTO EN ESPANOL",
+				  	"lang_second_line":"SEGUNDA LINEA"
+				  }
+				],
+				"PT":[
+				  {
+				  	"lang_the_text_is_in_english":"TEXTO EM PORTUGUES",
+				  	"lang_second_line":"SEGUNDA LINHA"
+				  }
+				]
+			};
+
+			var lang = window.navigator.language.toUpperCase();
+			//console.log(lang);
+
+		    if(lang.includes('EN')){
+				let idGroup = document.querySelectorAll("[id^='lang']");
+
+		    	for(let i=0; i<idGroup.length; i++){
+		    		//console.log('i 			'+idGroup[i].id);
+		    		let idFound 		= idGroup[i].id;
+		    		let translation	= bdLang.EN[0][idFound];
+				
+					document.getElementById(idFound).innerHTML = translation;	
+		    	}
+
+				//let findSamePartId = document.querySelector("[id^='lang']");
+				//let idFound = findSamePartId.id;
+				//let translation = bdLang.EN[0][idFound];
+
+		        //console.log(bdLang.EN[0]);
+		        //console.log(idFound);
+		        //console.log(translation);
+				
+				//document.getElementById(idFound).innerHTML = translation;
+
+
+		    }else if(lang.includes('ES')){
+				let idGroup = document.querySelectorAll("[id^='lang']");
+
+		    	for(let i=0; i<idGroup.length; i++){
+		    		//console.log('i 			'+idGroup[i].id);
+		    		let idFound 		= idGroup[i].id;
+		    		let translation	= bdLang.ES[0][idFound];
+				
+					document.getElementById(idFound).innerHTML = translation;	
+		    	}	
+
+		    }else if(lang.includes('PT')){
+				let idGroup = document.querySelectorAll("[id^='lang']");
+
+		    	for(let i=0; i<idGroup.length; i++){
+		    		//console.log('i 			'+idGroup[i].id);
+		    		let idFound 		= idGroup[i].id;
+		    		let translation	= bdLang.PT[0][idFound];
+				
+					document.getElementById(idFound).innerHTML = translation;	
+		    	}	
+		    }else{
+				let idGroup = document.querySelectorAll("[id^='lang']");
+
+		    	for(let i=0; i<idGroup.length; i++){
+		    		//console.log('i 			'+idGroup[i].id);
+		    		let idFound 		= idGroup[i].id;
+		    		let translation	= bdLang.PT[0][idFound];
+				
+					document.getElementById(idFound).innerHTML = translation;	
+		    	}
+		    }
+
+
+
+		</script>
+	</body>
+</html>
